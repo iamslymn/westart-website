@@ -28,14 +28,14 @@
 
 /* Light Mode Variables */
 body.light-mode {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --text-primary: #1a1a1a;
-    --text-secondary: #4a5568;
-    --text-tertiary: #718096;
-    --border-color: rgba(0, 0, 0, 0.1);
-    --nav-bg: rgba(255, 255, 255, 0.9);
-    --card-hover-shadow: rgba(0, 201, 217, 0.2);
+    --bg-primary: #f5f7fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #1a202c;
+    --text-secondary: #2d3748;
+    --text-tertiary: #4a5568;
+    --border-color: rgba(0, 0, 0, 0.12);
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --card-hover-shadow: rgba(0, 201, 217, 0.25);
 }
 
 html {
@@ -70,6 +70,10 @@ body {
     transition: all 0.3s ease;
 }
 
+body.light-mode .navbar {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
 .nav-content {
     display: flex;
     justify-content: space-between;
@@ -77,9 +81,25 @@ body {
     padding: 1.5rem 0;
 }
 
+.logo {
+    position: relative;
+}
+
 .logo img {
     height: 50px;
     width: auto;
+}
+
+.logo-light {
+    display: none;
+}
+
+body.light-mode .logo-dark {
+    display: none;
+}
+
+body.light-mode .logo-light {
+    display: block;
 }
 
 .nav-right {
@@ -198,9 +218,9 @@ body.light-mode .cta-button:hover {
 }
 
 body.light-mode .hero-background {
-    background: radial-gradient(circle at 30% 50%, rgba(0, 201, 217, 0.08), transparent 60%),
-                radial-gradient(circle at 70% 50%, rgba(255, 163, 0, 0.08), transparent 60%),
-                radial-gradient(circle at 50% 80%, rgba(255, 0, 94, 0.08), transparent 60%);
+    background: radial-gradient(circle at 30% 50%, rgba(0, 201, 217, 0.12), transparent 60%),
+                radial-gradient(circle at 70% 50%, rgba(255, 163, 0, 0.12), transparent 60%),
+                radial-gradient(circle at 50% 80%, rgba(255, 0, 94, 0.12), transparent 60%);
 }
 
 .gradient-orb {
@@ -241,11 +261,11 @@ body.light-mode .hero-background {
 }
 
 body.light-mode .gradient-orb {
-    opacity: 0.15;
+    opacity: 0.2;
 }
 
 body.light-mode .lightning-bolt {
-    opacity: 0.05;
+    opacity: 0.08;
 }
 
 .lightning-bolt {
@@ -428,6 +448,14 @@ body.light-mode .title-word:nth-child(3) {
     position: relative;
 }
 
+body.light-mode .scroll-arrow {
+    border-color: var(--orange-peel);
+}
+
+body.light-mode .scroll-arrow::before {
+    background: var(--orange-peel);
+}
+
 .scroll-arrow::before {
     content: '';
     position: absolute;
@@ -579,6 +607,16 @@ body.light-mode .section-title {
     border-color: var(--teal-cyan);
 }
 
+body.light-mode .benefit-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 2px solid var(--border-color);
+}
+
+body.light-mode .benefit-card:hover {
+    box-shadow: 0 15px 40px rgba(0, 201, 217, 0.2);
+    border-color: var(--teal-cyan);
+}
+
 .card-icon {
     margin-bottom: 1.5rem;
 }
@@ -604,7 +642,7 @@ body.light-mode .section-title {
 }
 
 body.light-mode .journey {
-    background: linear-gradient(180deg, transparent, rgba(0, 201, 217, 0.03), transparent);
+    background: linear-gradient(180deg, transparent, rgba(0, 201, 217, 0.06), transparent);
 }
 
 .roadmap {
@@ -630,6 +668,10 @@ body.light-mode .journey {
     );
     transform: translateX(-50%);
     opacity: 0.3;
+}
+
+body.light-mode .roadmap-line {
+    opacity: 0.4;
 }
 
 .roadmap-line::after {
@@ -811,7 +853,7 @@ body.light-mode .step-content h3 {
 }
 
 body.light-mode .portfolio {
-    background: radial-gradient(circle at 50% 50%, rgba(255, 0, 94, 0.03), transparent 70%);
+    background: radial-gradient(circle at 50% 50%, rgba(255, 0, 94, 0.06), transparent 70%);
 }
 
 .highlight-number {
@@ -863,6 +905,16 @@ body.light-mode .number-highlight {
 .project-card:hover {
     transform: scale(1.05);
     box-shadow: 0 25px 50px rgba(255, 163, 0, 0.3);
+    border-color: var(--orange-peel);
+}
+
+body.light-mode .project-card {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border: 2px solid var(--border-color);
+}
+
+body.light-mode .project-card:hover {
+    box-shadow: 0 15px 40px rgba(255, 163, 0, 0.25);
     border-color: var(--orange-peel);
 }
 
@@ -951,6 +1003,17 @@ body.light-mode .project-status.progress {
     color: white;
 }
 
+body.light-mode .tag {
+    background: rgba(0, 201, 217, 0.1);
+    border: 2px solid var(--border-color);
+}
+
+body.light-mode .tag:hover {
+    background: var(--teal-cyan);
+    border-color: var(--teal-cyan);
+    color: white;
+}
+
 /* ==================== ABOUT SECTION ==================== */
 .about {
     padding: 8rem 0;
@@ -958,7 +1021,7 @@ body.light-mode .project-status.progress {
 }
 
 body.light-mode .about {
-    background: linear-gradient(180deg, transparent, rgba(0, 201, 217, 0.02), transparent);
+    background: linear-gradient(180deg, transparent, rgba(0, 201, 217, 0.05), transparent);
 }
 
 .team-hero {
@@ -973,6 +1036,11 @@ body.light-mode .about {
     position: relative;
     border-radius: 30px;
     overflow: hidden;
+}
+
+body.light-mode .team-collage {
+    border: 2px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .collage-item {
@@ -998,6 +1066,12 @@ body.light-mode .about {
     background: linear-gradient(135deg, var(--radical-red), var(--teal-cyan));
     opacity: 0.3;
     animation: collageFloat 6s ease-in-out infinite 4s;
+}
+
+body.light-mode .collage-item-1,
+body.light-mode .collage-item-2,
+body.light-mode .collage-item-3 {
+    opacity: 0.4;
 }
 
 @keyframes collageFloat {
@@ -1080,6 +1154,11 @@ body.light-mode .collage-overlay p {
     aspect-ratio: 1;
 }
 
+body.light-mode .member-photo {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--border-color);
+}
+
 .photo-placeholder {
     width: 100%;
     height: 100%;
@@ -1130,6 +1209,10 @@ body.light-mode .collage-overlay p {
     border-top: 1px solid var(--border-color);
     padding: 4rem 0 2rem;
     margin-top: 6rem;
+}
+
+body.light-mode .footer {
+    box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.05);
 }
 
 .footer-content {
