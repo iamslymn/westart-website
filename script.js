@@ -310,6 +310,30 @@ document.addEventListener('mousedown', () => {
     document.body.classList.remove('keyboard-nav');
 });
 
+// ==================== THEME TOGGLE ====================
+const themeToggle = document.getElementById('themeToggle');
+const body = document.body;
+
+// Check for saved theme preference or default to dark mode
+const savedTheme = localStorage.getItem('theme') || 'dark';
+if (savedTheme === 'light') {
+    body.classList.add('light-mode');
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    
+    // Save theme preference
+    const currentTheme = body.classList.contains('light-mode') ? 'light' : 'dark';
+    localStorage.setItem('theme', currentTheme);
+    
+    // Add animation effect
+    themeToggle.style.transform = 'rotate(360deg)';
+    setTimeout(() => {
+        themeToggle.style.transform = '';
+    }, 300);
+});
+
 // ==================== CONSOLE MESSAGE ====================
 console.log('%c WeStart - Startup Acceleration Platform ', 
     'background: linear-gradient(135deg, #00C9D9, #FFA300, #FF005E); color: white; font-size: 20px; font-weight: bold; padding: 10px;');
